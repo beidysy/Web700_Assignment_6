@@ -44,13 +44,6 @@ const Student = sequelize.define('Student', {
 
 
 
-
-// module.exports.initialize = function () {
-//     return new Promise(function (resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
-
 module.exports.initialize = function () {
     return new Promise((resolve, reject) => {
         sequelize.sync()
@@ -62,12 +55,6 @@ module.exports.initialize = function () {
     });
 };
 
-
-// module.exports.getAllStudents = function(){
-//     return new Promise(function(resolve,reject){
-//         reject("not implemented");
-//     });
-// };
 
 module.exports.getAllStudents = function() {
     return new Promise((resolve, reject) => {
@@ -93,12 +80,6 @@ module.exports.getTAs = function () {
     });
 };
 
-// module.exports.getCourses = function(){
-//     return new Promise(function(resolve,reject){
-//         reject("not implemented");
-//     });
-// };
-
 module.exports.getCourses = function() {
     return new Promise((resolve, reject) => {
         Course.findAll()
@@ -117,12 +98,6 @@ module.exports.getCourses = function() {
 };
 
 
-
-// module.exports.getStudentByNum = function (num) {
-//     return new Promise(function (resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
 module.exports.getStudentByNum = function(num) {
     return new Promise((resolve, reject) => {
         Student.findAll({
@@ -142,12 +117,6 @@ module.exports.getStudentByNum = function(num) {
     });
 };
 
-
-// module.exports.getStudentsByCourse = function (course) {
-//     return new Promise(function (resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
 module.exports.getStudentsByCourse = function(course) {
     return new Promise((resolve, reject) => {
         Student.findAll({
@@ -167,55 +136,6 @@ module.exports.getStudentsByCourse = function(course) {
     });
 };
 
-
-// module.exports.addStudent = function (studentData) {
-//     return new Promise(function(resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
-
-// module.exports.addStudent = function(studentData) {
-//     return new Promise((resolve, reject) => {
-//         // Ensure the TA property is properly set to a boolean value
-//         studentData.TA = studentData.TA ? true : false;
-        
-//         // Iterate over every property in studentData to check for empty values and replace them with null
-//         for (let key in studentData) {
-//             if (studentData.hasOwnProperty(key) && studentData[key] === "") {
-//                 studentData[key] = null;
-//             }
-//         }
-
-//         // Attempt to create a new student record
-//         Student.create(studentData)
-//         .then(student => {
-//             resolve(student); // Operation was successful, resolve the promise with the student data
-//         })
-//         .catch(err => {
-//             console.error('Error creating student:', err);
-//             reject("unable to create student"); // There was an error in the process, reject the promise
-//         });
-//     });
-// };
-// collegeData.js
-// module.exports.addStudent = function (studentData) {
-//     return new Promise((resolve, reject) => {
-//         // Ensure the TA property is properly set to a boolean value
-//         studentData.TA = studentData.TA ? true : false;
-        
-//         // Replace empty string with null for Sequelize
-//         Object.keys(studentData).forEach(key => {
-//             if (studentData[key] === "") {
-//                 studentData[key] = null;
-//             }
-//         });
-
-//         // Attempt to create a new student record
-//         Student.create(studentData)
-//             .then(student => resolve(student)) // If success, resolve with student
-//             .catch(err => reject(err)); // If error, reject with error
-//     });
-// };
 
 module.exports.addStudent = function (studentData) {
     return new Promise((resolve, reject) => {
@@ -249,13 +169,6 @@ module.exports.addStudent = function (studentData) {
 };
 
 
-
-// module.exports.getCourseById = function(id) {
-//     return new Promise(function(resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
-
 module.exports.getCourseById = function(id) {
     return new Promise((resolve, reject) => {
         Course.findAll({
@@ -274,13 +187,6 @@ module.exports.getCourseById = function(id) {
         });
     });
 };
-
-
-// module.exports.updateStudent = function(studentData) {
-//     return new Promise(function(resolve, reject) {
-//         reject("not implemented");
-//     });
-// };
 
 
 module.exports.updateStudent = function(studentData) {
